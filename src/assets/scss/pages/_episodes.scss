@@ -1,0 +1,70 @@
+.episodes {
+  padding: 24px 0 44px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__img {
+    width: 27rem;
+    margin-bottom: 16px;
+  }
+  .filter-input {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 6.5rem;
+  }
+  &__cards-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+}
+
+.episode-detail {
+  padding: 3rem 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__name {
+    @include font(400, 3.6rem, 1.2);
+    color: $pr-color;
+    margin-bottom: 2.4rem;
+  }
+  &__info {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 6.4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include media(540px) {
+      grid-template-columns: 1fr;
+    }
+    h4 {
+      @include font(700, 1.6rem, 1.5);
+      color: $pr-color;
+    }
+    h5 {
+      @include font(400, 1.4rem, 1.5);
+      letter-spacing: 0.25px;
+      color: $detail-subtitle;
+    }
+  }
+  &__characters {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  &__title {
+    @include font(500, 2rem, 1.2);
+    color: $card-subtitle-color;
+    margin-bottom: 2.4rem;
+    letter-spacing: 0.15px;
+    text-align: left;
+    width: 100%;
+  }
+}

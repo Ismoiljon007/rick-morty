@@ -1,0 +1,105 @@
+.filter-input {
+  width: 100%;
+  input {
+    width: 100%;
+    padding: 1.6rem 1.6rem 1.6rem 4.8rem;
+    border: 1px solid $filter-border;
+    border-radius: 8px;
+    background-image: url("@/assets/images/svg/search.svg");
+    background-repeat: no-repeat;
+    background-size: 2.4rem;
+    background-position: 16px center;
+    @include font(400, 1.6rem, 1.2);
+    color: $card-subtitle-color;
+  }
+}
+.filter-select {
+  width: 100%;
+  position: relative;
+  &__header {
+    position: relative;
+    z-index: 1;
+    color: $card-subtitle-color;
+    @include font(400, 1.6rem, 1.2);
+    padding: 1.6rem 1.4rem;
+    border: 1px solid $filter-border;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    justify-content: space-between;
+    background-color: $bg-color;
+  }
+  &__list {
+    z-index: 2;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    background-color: $bg-color;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $filter-border;
+    border-radius: 8px;
+  }
+  &__item {
+    color: $card-subtitle-color;
+    @include font(400, 1.6rem, 1.2);
+    padding: 1.6rem 1.4rem;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: rgba($color: $detail-subtitle, $alpha: 0.1);
+    }
+    cursor: pointer;
+    &:first-child {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    &:last-child {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+}
+@keyframes openFilter {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.filter-select-wrapper {
+  display: grid;
+  gap: 2rem;
+  @include media(830px) {
+    display: none;
+    animation: openFilter 0.5s ease forwards;
+  }
+  &.active-filter {
+    display: grid;
+    animation: openFilter 0.5s ease forwards;
+  }
+}
+.filter-open-btn {
+  display: none;
+  width: 100%;
+  background-color: $filter-btn;
+  padding: 1.6rem 1.4rem;
+  border: 1px solid $filter-border;
+  border-radius: 8px;
+  justify-content: center;
+  gap: 2.4rem;
+  align-items: center;
+  cursor: pointer;
+  span {
+    @include font(400, 1.6rem, 1.2);
+    color: $filter-btn-text;
+  }
+  @include media(830px) {
+    display: flex;
+  }
+}

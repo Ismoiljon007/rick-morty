@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $site-font;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+  font-size: $font-size-base;
+  @include media(1200px) {
+    font-size: calc($font-size-base * 0.9);
+  }
+  @include media(992px) {
+    font-size: calc($font-size-base * 0.8);
+  }
+  @include media(768px) {
+    font-size: calc($font-size-base * 0.7);
+  }
+  @include media(576px) {
+    font-size: calc($font-size-base * 0.6);
+  }
+}
+
+body {
+  height: 100%;
+  background-color: $bg-color;
+  @include font(40, 1.4rem, 1.5);
+  color: $card-subtitle-color;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+main {
+  flex-grow: 1;
+}
